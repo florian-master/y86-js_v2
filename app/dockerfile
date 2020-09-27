@@ -1,0 +1,29 @@
+FROM node:12-alpine AS BUILD_IMAGE
+
+WORKDIR /usr/app/
+COPY . .
+
+# Install dependencies
+RUN npm install -g typescript jison && npm install
+
+# Generate compilers parsers
+RUN jison grammars/hcl2js.jison -o ts/model/hcl2js/hcl2jsParser.js
+RUN jison grammars/yas.jison -o ts/model/yas/yasParser.js
+
+# Build the application
+RUN npm run build
+
+RUN npm prune --production
+
+FROM node:12-alpine
+
+WORKDIR /usr/app
+COPY --from=BUILD_IMAGE /usr/app/dist                       ./dist
+COPY --from=BUILD_IMAGE /usr/app/server.js /usr/app/cli.js  ./
+COPY --from=BUILD_IMAGE /usr/app/node_modules/              ./node_modules
+COPY --from=BUILD_IMAGE /usr/app/src/                       ./src
+
+EXPOSE 8080
+
+# Launch server on port 8080
+CMD node --max-http-header-size 80000 ./server.js

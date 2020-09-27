@@ -1,0 +1,104 @@
+:root {
+  --accent: #297fb8;
+  --accent-dark: #206592;
+  --accent-light: #3497d8;
+  --background: #e2e2e2;
+  --background-dark: #cccccc;
+  --background-light: #ffffff;
+  --foreground: #333333;
+  --foreground-dark: #232323;
+  --foreground-light: #444444;
+  --shadow: rgba(35, 35, 35, 0.6);
+  --error: #ff5050;
+  --warning: #ff884d;
+  --success: #4caf50;
+
+  --AboutDialog-icon-foreground: var(--accent-light);
+
+  --component-header-background: var(--accent);
+  --component-header-foreground: var(--background);
+  --component-label-background: var(--background-dark);
+  --component-label-foreground: var(--accent-light);
+  --component-subheader-background: var(--background);
+  --component-subheader-foreground: var(--foreground-dark);
+  --component-subheader-border: var(--foreground-dark);
+
+  --Dialog-container-background: var(--shadow);
+  --Dialog-background: var(--background);
+  --Dialog-foreground: var(--foreground);
+  --Dialog-close-button-foreground: var(--background-light);
+  --Dialog-heading-background: var(--accent-light);
+  --Dialog-heading-foreground: var(--background-light);
+
+  --Editor-gutter-background: var(--background);
+  --Editor-gutter-foreground: var(--foreground);
+  --Editor-gutter-active-line-background: var(--background-dark);
+  --Editor-background: var(--background-light);
+  --Editor-foreground: var(--foreground-light);
+  --Editor-active-line-background: var(--Editor-gutter-active-line-background);
+  --Editor-bracket-border: var(--error);
+  --Editor-comment: #46a049;
+  --Editor-constant: var(--error);
+  --Editor-cursor-color: var(--accent-light);
+  --Editor-guide-color: var(--background-dark);
+  --Editor-function: var(--warning);
+  --Editor-keyword: var(--accent-light);
+  --Editor-selected-word-border: var(--error);
+  --Editor-selection-background: rgba(41, 127, 184, 0.3);
+  --Editor-variable: #b169c9;
+
+  --Header-background: var(--accent-dark);
+  --Header-foreground: var(--background-light);
+
+  --HeaderButton-hover-background: var(--accent-light);
+  --HeaderButton-disabled-background: var(--Header-background);
+  --HeaderButton-disabled-foreground: var(--accent);
+  --HeaderButton-enabled-background: var(--accent);
+  --HeaderButton-enabled-foreground: var(--Header-foreground);
+
+  --InstructionSet-button-background: var(--accent);
+  --InstructionSet-button-hover-background: var(--accent-light);
+  --InstructionSet-button-foreground: var(--background-light);
+  --InstructionSet-table-background: var(--background);
+  --InstructionSet-table-foreground: var(--foreground-light);
+  --InstructionSet-table-border: var(--background-dark);
+  --InstructionSet-table-focus-background: var(--background-dark);
+  --InstructionSet-table-heading-background: var(--background-dark);
+  --InstructionSet-table-heading-foreground: var(--foreground-light);
+  --InstructionSet-table-name-column-background: var(--background-light);
+  --InstructionSet-table-remove-instruction-button-foreground: var(--error);
+
+  --Memory-address-background: var(--background-dark);
+  --Memory-address-foreground: var(--foreground);
+  --Memory-ebp-foreground: var(--error);
+  --Memory-esp-foreground: var(--success);
+  --Memory-modified-foreground: var(--error);
+
+  --ObjectCode-background: var(--background-light);
+  --ObjectCode-error-background: var(--error);
+  --ObjectCode-highlighted-background: var(--success);
+
+  --pane-background: var(--background);
+  --pane-foreground: var(--foreground);
+
+  --scrollbar-foreground: var(--accent-light);
+  --scrollbar-background: var(--background-dark);
+
+  --scroll-button-background: var(--accent);
+  --scroll-button-foreground: var(--background-light);
+  --scroll-button-hover-background: var(--accent-light);
+
+  --SettingsDialog-icon-foreground: var(--accent-light);
+  --SettingsDialog-select-background: var(--background-light);
+  --SettingsDialog-select-foreground: var(--foreground-light);
+
+  --Tab-background: var(--background);
+  --Tab-foreground: var(--foreground);
+
+  --Tabs-button-background: var(--Header-background);
+  --Tabs-button-foreground: var(--Header-foreground);
+  --Tabs-current-button-background: var(--HeaderButton-enabled-background);
+  --Tabs-current-button-foreground: var(--Header-foreground);
+  --Tabs-hover-button-background: var(--accent-light);
+  --Tabs-hover-button-foreground: var(--Header-foreground);
+}

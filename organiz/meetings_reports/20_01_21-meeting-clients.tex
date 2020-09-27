@@ -1,0 +1,132 @@
+\documentclass[french]{article}
+ 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=blue]{hyperref}
+
+\title{Compte rendu de réunion (environnement d'exécution y86)}
+
+\author{
+    BANDET Alexis \\
+    \texttt{alexis.bandet@u-bordeaux.fr} \\
+    GAISSET Valentin \\
+    \texttt{valentin.gaisset@etu.u-bordeaux.fr} \\
+    GUISSET Romain \\
+    \texttt{romain.guisset@etu.u-bordeaux.fr} \\
+    SIMBA Florian \\
+    \texttt{florian.simba@u-bordeaux.fr} \\
+}
+
+\date{21 Janvier 2020}
+
+\begin{document}
+
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+\section{Introduction}
+
+Cette réunion avait pour but de créer un premier contact entre l'équipe et les clients, Aurélien ESNARD et François PELLEGRINI.\\
+\\
+Plusieurs sujets ont été abordés : \\
+
+\begin{itemize}
+    \item Environnement existant (ssim et y86.js)
+    \item Fonctionnalités attendues
+    \item Ressources disponibles pour le projet
+\end{itemize}
+
+\section{Compte rendu}
+
+\subsection{Environnement existant}
+
+Deux environnements y86 sont actuellement à disposition pour les élèves. Le premier en standalone, le second en tant qu'application web.
+
+\subsubsection{ssim (standalone)}
+
+Version "originelle" de l'environnement d'exécution y86. Elle est fonctionnelle mais contraignante à l'usage, et l'interface utilisateur se fait vieillissante. Le principal problème tient dans le fait d'avoir des dépendances externe (pour l'affichage notamment) et de devoir re-compiler l'application à chaque modification du câblage des instructions.
+
+Lors de la modification du câblage, il faut à la fois modifier l'InstructionSet \textit{isa.ch} et le fichier HCL. En effet, il y a une double dépendance lors de la compilation du SSIM quand on modifie ou rajoute une instruction.
+
+\subsubsection{y86.js (Application Web)}
+
+Application web développée en JavaScript. Aucun backend n'est utilisé (sauf pour accéder à l'application, évidemment).
+
+Contrairement à ssim, l'interface est bien plus agréable et moderne, mais l'application ne supporte pas le câblage d'instructions, ni la visualisation du état du processeur (stages : fetch, ...).
+
+\subsection{Fonctionnalités attendues}
+
+L'objectif du projet est de compléter l'application web existante en implémentant, entre autres, les fonctionnalités de ssim manquantes (câblage et l'état du processeur).
+
+Pour avoir une vue globale, on peut dresser une liste de besoins fonctionnels / non-fonctionnels :\\
+
+\subsubsection{Besoins fonctionnels}
+
+\begin{itemize}
+    \item Gestion de l'état du processeur : 
+    Possibilité de voir l'état du processeur en temps réel, à chaque étape de l'exécution de chaque instruction.\\
+    Il existe plusieurs architecture de processeur, mais nous nous concentrerons sur la version séquentielle.
+    
+    \item Création et câblage d'instructions : 
+    Possibilité d'ajouter des instructions dans la liste d'instructions et câbler ces dernières via du code HCL.
+    
+    \item Implémenter la notion de "mode" dans l'application :
+    \begin{itemize}
+        \item Programmation : celui actuellement présent. Il consiste en une fenêtre de code, une vue de la mémoire, des registres, des flags et du code associé au code binaire.
+        \item Avancé : La fenêtre de saisie de code serait remplacée par les différents stages du processeur. L'utilisateur utilise ce mode une fois qu'il a un programme qui fonctionne afin de pouvoir visualiser ce qui se passe sur le CPU, en vu de modifier le câblage ou le jeu d'instruction.
+        \item HCL : découpé en deux fenêtres, une pour éditer le comportement d'une instruction en HCL, l'autre qui affiche le statut du processeur.
+    \end{itemize}
+
+    \item Accessibilité :
+    Un mode textuel afin de faciliter l'accès à l'application (voir eLinks, Lynks ne supportant pas le JavaScript...).\\
+    Samuel Thibaud pourrait nous renseigner sur la question.\\
+    Le \href{https://references.modernisation.gouv.fr/rgaa-accessibilite/}{RGAA} est aussi une bonne référence.
+\end{itemize}
+
+\subsubsection{Besoins non fonctionnels}
+
+\begin{itemize}
+    \item Modularité : 
+    L'objectif à long terme est d'avoir un simulateur flexible et modulaire. De ce fait, un effort sur l'architecture devra être fait afin de permettre de rendre les choses "dynamiques". Le but est d'avoir à modifier le moins de choses possible pour ajouter / modifier un comportement. Est notamment concerné le triplet (état du processeur, InstructionSet, HCL).
+    
+    \item Longévité : 
+    Afin de permettre au projet de vivre dans le temps, le code devra être bien segmenté, une documentation rédigée, ainsi qu'un cahier de maintenance (très technique) afin d'aider de potentiels successeurs à s'approprier le code.
+    
+\end{itemize}
+
+\subsection{Ressources disponibles pour démarrer}
+
+Plusieurs types de ressources nous ont été proposées, en particulier des projets JS sur le y86, et les cours / TD de L2 sur l'architecture des processeurs.\\
+Tout un travail de documentation sera donc de mise avant d'engager le développement à proprement parler. Au cours de cette réunion, plusieurs grandes étapes ont été identifiées : 
+
+\begin{itemize}
+    \item Prise en main de la version standalone x86, avec une mise en pratique du projet L2.
+    
+    \item Appropriation du code de l'application web à étendre. Voir ce qui est à faire "de zéro" et ce qui est déjà ou partiellement implémenté. Regarder et comprendre les bibliothèques utilisées.
+    
+    \item Regarder les autres applications JS existantes pour voir si des modules ont déjà été implémentés (en faisant attention à la licence, bien entendu).
+\end{itemize}
+
+\subsection{Tâches à réaliser}
+
+\begin{enumerate}
+    \item Analyse
+    
+    \begin{enumerate}
+        \item Prise en main de la version CMU y86 (mise en pratique du projet des L2)
+        
+        \item Lire le code node.JS original (surtout l'assembleur) du simulateur web
+        
+        \item S'approprier le code node.JS original (chacun sa partie / ses classes) et le documenter dans le wiki du GitLab
+    \end{enumerate}
+    
+    \item Réflexion en vu de produire un descripteur ISA modulaire et sur la construction de l'interface de la fenêtre "State" et du mode HCL pour la WEBAPP.
+    
+    \item Réalisation de la partie avancée.
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,23 @@
+{
+  "current": {
+    "kernel": 0,
+    "language": 0,
+    "tab": 0,
+    "theme": 0
+  },
+  "kernels": [],
+  "languages": [
+    { "id": 0, "name": "English", "filename": "en.json", "strings": {} },
+    { "id": 1, "name": "Français", "filename": "fr.json", "strings": {} }
+  ],
+  "tabs": [
+    { "id": 0, "name": "editor", "buttons": [ "assemble", "load", "save" ] },
+    { "id": 1, "name": "execution", "buttons": [ "reset", "step", "continue" ] },
+    { "id": 2, "name": "instructionSet", "buttons": [ "load", "save" ] },
+    { "id": 3, "name": "hcl", "buttons": [ "load", "save" ] }
+  ],
+  "themes": [
+    { "id": 0, "name": "Dark", "filename": "dark.css" },
+    { "id": 1, "name": "Light", "filename": "light.css" }
+  ]
+}

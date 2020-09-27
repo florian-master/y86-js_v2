@@ -1,0 +1,59 @@
+.ace-y86-sim .ace_gutter {
+  background-color: var(--Editor-gutter-background);
+  color: var(--Editor-gutter-foreground);
+}
+
+.ace-y86-sim .ace_gutter-active-line {
+  background-color: var(--Editor-gutter-active-line-background);
+}
+
+.ace-y86-sim {
+  background-color: var(--Editor-background);
+  color: var(--Editor-foreground);
+}
+
+.ace-y86-sim .ace_marker-layer .ace_active-line {
+  background: var(--Editor-active-line-background);
+}
+
+.ace-y86-sim .ace_print-margin {
+  background: var(--Editor-guide-color);
+}
+
+.ace-y86-sim .ace_cursor {
+  color: var(--Editor-cursor-color);
+}
+
+.ace-y86-sim .ace_constant {
+  color: var(--Editor-constant);
+}
+
+.ace-y86-sim .ace_storage,
+.ace-y86-sim .ace_keyword {
+  color: var(--Editor-keyword);
+}
+
+.ace-y86-sim .ace_comment {
+  color: var(--Editor-comment);
+}
+
+.ace-y86-sim .ace_variable {
+  color: var(--Editor-variable);
+}
+
+.ace-y86-sim .ace_entity.ace_name.ace_function {
+  color: var(--Editor-function);
+}
+
+.ace-y86-sim .ace_marker-layer .ace_selection {
+  background: var(--Editor-selection-background);
+}
+
+.ace-y86-sim .ace_marker-layer .ace_bracket {
+  border: 1px solid var(--Editor-bracket-border);
+}
+
+.ace-y86-sim .ace_marker-layer .ace_selected-word {
+  background: none;
+  border: 1px solid var(--Editor-selected-word-border);
+}

@@ -1,0 +1,73 @@
+
+\documentclass[french]{article}
+ 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=blue]{hyperref}
+
+\title{Compte rendu de TD - Environnement d'exécution y86+HCL}
+
+\author{
+    BANDET Alexis \\
+    \texttt{alexis.bandet@u-bordeaux.fr} \\
+    GAISSET Valentin \\
+    \texttt{valentin.gaisset@etu.u-bordeaux.fr} \\
+    GUISSET Romain \\
+    \texttt{romain.guisset@etu.u-bordeaux.fr} \\
+    SIMBA Florian \\
+    \texttt{florian.simba@u-bordeaux.fr} \\
+}
+
+\date{12 Mars 2020}
+
+\begin{document}
+
+\maketitle
+
+\newpage
+
+\section{Introduction}
+
+Cette séance a eu lieu une semaine après le premier audit et la revue de notre cahier des besoins par notre rapporteur. Nous avons principalement parlé des défauts de celui-ci ainsi que du contenu à mettre dans le mémoire.
+
+\section{Problèmes du cahier des besoins}
+
+\begin{enumerate}
+    \item Manque de contexte\\
+Pour une personne non-familière au projet, le contexte n'est pas suffisamment détaillé. Ce qui est déjà fait et ce qu'il y a faire est notamment flou. Pour palier à ce problème, une relecture par des personnes extérieures au projet pourraient être envisagées.
+
+    \item Classification de besoins\\
+L'automatisation (requêtes paramétrées) à été classée en tant que besoin non-fonctionnel, ce qui n'est pas le cas. De plus, l'ordre de priorité des besoins ainsi que la description de la modularité de l'application ne sont pas clairs. 
+
+\end{enumerate}
+
+\section{Tests}
+
+Plusieurs tests pourraient-être intéressants :
+
+\begin{itemize}
+    \item Performances\\
+Des tests de performances pourraient être intéressants afin de s'assurer que l'application fonctionne convenablement, en particulier sur les ordinateurs du CREMI.
+
+    \item Interface\\
+L'interface permet a l'utilisateur de modifier plusieurs composants (jeu d'instruction, HCL, etc) qui auront un impact sur d'autres composants. Par exemple, si le jeu d'instruction est modifié, les répercussions doivent se faire dans l'éditeur de ys. Tester l'interaction entre les différents composants pourrait ainsi être intéressant.
+\end{itemize}{}
+
+\section{Mémoire}
+
+En plus d'une reprise du cahier des besoins, plusieurs éléments seront à ajouter :
+
+\begin{itemize}
+    \item Choix techniques (entre analyse des besoins et architecture)
+    \item Description du logiciel
+    \item Cahier de Maintenance
+    \item Les protocoles de test
+    \item Améliorations possibles
+    \item Problèmes rencontrés
+\end{itemize}{}
+
+% TODO
+
+\end{document}

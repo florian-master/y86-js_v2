@@ -1,0 +1,109 @@
+{
+  "AboutDialog": {
+    "title": "About",
+    "branding": "University of Bordeaux",
+    "codeSamples": "Y86 code samples",
+    "documentation": "Documentation",
+    "sourceCode": "Source code (on GitHub)"
+  },
+  "CpuState": {
+    "title": "CPU State"
+  },
+  "documentTitle": "Y86 Simulator",
+  "Editor": {
+    "title": "Source code"
+  },
+  "Flags": {
+    "title": "Flags"
+  },
+  "Header": {
+    "title": "Y86 Simulator",
+    "HeaderButton": {
+      "assemble":"Assemble",
+      "reset": "Reset",
+      "step": "Step",
+      "continue": "Continue",
+      "load": "Load",
+      "save": "Save"
+    },
+    "messages": {
+      "hclAssembleError": "Could not assemble the HCL code.",
+      "hclInjectionError": "An error occured when injecting HCL code.",
+      "line": "Line ",
+      "lineMessageSeparator": ": ",
+      "yasAssembleError": "Could not assemble the ys code."
+    }
+  },
+  "InstructionSet": {
+    "argumentTypes": [
+      { "name": "NONE", "description": "No argument is given." },
+      { "name": "REG", "description": "A register name." },
+      { "name": "MEM", "description": "A memory address." },
+      { "name": "CONST", "description": "A constant integer value." },
+      { "name": "LABEL", "description": "A label name." }
+    ],
+    "attributes": [
+      { "name": "name", "description": "Name to use when calling this instruction." },
+      { "name": "icode", "description": "Instruction code." },
+      { "name": "ifun", "description": "Function code." },
+      { "name": "typeArg1", "description": "The type of the first given argument." },
+      { "name": "typeArg2", "description": "The type of the second given argument." }
+    ],
+    "buttons": {
+      "loadChanges": "Load changes",
+      "newInstruction": "New instruction",
+      "reloadDefault": "Reload default"
+    },
+    "messages": {
+      "detail": {
+        "loadJsonNotAnArray": "The given JSON file doe not contain an array",
+        "loadJsonNotARawInstructionObject": "An entry of the JSON file is not a correct RawInstruction object, entry with id: <b>",
+        "typeArg2ProvidedWithoutTypeArg1ForInstruction": "<u>typeArg2</u> has been provided without <u>typeArg1</u> for instruction: <b>"
+      },
+      "loadJsonError": "Could not load the instruction set from the given JSON file.",
+      "loadJsonSuccess": "The given JSON file's instruction set has been successfully loaded.",
+      "reloadDefaultError": "Could not reload the default Instruction set.",
+      "reloadDefaultSuccess": "The default instruction set has been successfully reloaded.",
+      "updateError": "Could not update the instruction set.",
+      "updateSuccess": "The instruction set has been successfully updated."
+    },
+    "required": "Required",
+    "titles": {
+      "argumentTypes": "Types an instruction's argument can have",
+      "attributes": "Attributes an instruction has",
+      "documentation": "Documentation",
+      "instructionSetEditor": "Instruction set editor"
+    }
+  },
+  "Memory": {
+    "title": "Memory",
+    "address": "Addr",
+    "value": "Value"
+  },
+  "ObjectCode": {
+    "title": "Object code"
+  },
+  "PromptDialog": {
+    "error": "Error",
+    "success": "Success",
+    "warning": "Warning"
+  },
+  "Registers": {
+    "title": "Registers"
+  },
+  "SettingsDialog": {
+    "title": "Settings",
+    "kernel": "Kernel",
+    "language": "Language",
+    "theme": "Theme"
+  },
+  "Status": {
+    "title": "Status"
+  },
+  "Tabs": {
+    "editor": "Editor",
+    "execution": "Execution",
+    "instructionSet": "Instruction set",
+    "hcl": "HCL"
+  }
+}

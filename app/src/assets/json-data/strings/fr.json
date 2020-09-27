@@ -1,0 +1,109 @@
+{
+  "AboutDialog": {
+    "title": "À propos",
+    "branding": "Université de Bordeaux",
+    "codeSamples": "Échantillons de code Y86",
+    "documentation": "Documentation",
+    "sourceCode": "Code source (sur GitHub)"
+  },
+  "CpuState": {
+    "title": "État du CPU"
+  },
+  "documentTitle": "Simulateur Y86",
+  "Editor": {
+    "title": "Code source"
+  },
+  "Flags": {
+    "title": "Drapeaux"
+  },
+  "Header": {
+    "title": "Simulateur Y86",
+    "HeaderButton": {
+      "assemble": "Assembler",
+      "reset": "Réinitialiser",
+      "step": "Pas à pas",
+      "continue": "Continuer",
+      "load": "Charger",
+      "save": "Sauvegarder"
+    },
+    "messages": {
+      "hclAssembleError": "Le code HCL n'a pas été assemblé.",
+      "hclInjectionError": "Une erreur est survenue pendant l'injection du code HCL.",
+      "line": "Ligne ",
+      "lineMessageSeparator": " : ",
+      "yasAssembleError": "Le code Yas n'a pas été assemblé."
+    }
+  },
+  "InstructionSet": {
+    "argumentTypes": [
+      { "name": "NONE", "description": "Aucun argument n'est donné." },
+      { "name": "REG", "description": "Un nom de registre" },
+      { "name": "MEM", "description": "Une adresse mémoire." },
+      { "name": "CONST", "description": "Une valeur entière constante." },
+      { "name": "LABEL", "description": "Un nom de label." }
+    ],
+    "attributes": [
+      { "name": "name", "description": "Nom utilisé pour appeler cette instruction." },
+      { "name": "icode", "description": "Code instruction." },
+      { "name": "ifun", "description": "Code fonction." },
+      { "name": "typeArg1", "description": "Le type du premier argument donné." },
+      { "name": "typeArg2", "description": "Le type du second argument donné." }
+    ],
+    "buttons": {
+      "loadChanges": "Charger les changements",
+      "newInstruction": "Nouvelle instruction",
+      "reloadDefault": "Recharger les instructions par défauts"
+    },
+    "messages": {
+      "detail": {
+        "loadJsonNotAnArray": "Le fichier JSON donné ne contient pas de tableau",
+        "loadJsonNotARawInstructionObject": "Un des éléments du fichier JSON n'est pas un objet RawInstruction, élément ayant pour id : <b>",
+        "typeArg2ProvidedWithoutTypeArg1ForInstruction": "<u>typeArg2</u> donné sans préciser <u>typeArg1</u> pour l'instruction: <b>"
+      },
+      "loadJsonError": "Le jeu d'instructions contenu dans le fichier JSON donné n'a pas pu être chargé.",
+      "loadJsonSuccess": "Le jeu d'instructions contenu dans le fichier JSON donné a été chargé avec succès.",
+      "reloadDefaultError": "Le jeu d'instructions par défaut n'a pas pu être rechargé.",
+      "reloadDefaultSuccess": "Le jeu d'instructions par défaut a été rechargé avec succès.",
+      "updateError": "Le jeu d'instructions n'a pas pu être mit à jour.",
+      "updateSuccess": "Le jeu d'instructions a été mit à jour avec succès."
+    },
+    "required": "Exigé",
+    "titles": {
+      "argumentTypes": "Types qu'un argument d'instruction peut avoir",
+      "attributes": "Attributs d'une instruction",
+      "documentation": "Documentation",
+      "instructionSetEditor": "Éditeur du jeu d'instructions"
+    }
+  },
+  "Memory": {
+    "title": "Mémoire",
+    "address": "Adr ",
+    "value": "Valeur"
+  },
+  "ObjectCode": {
+    "title": "Code objet"
+  },
+  "PromptDialog": {
+    "error": "Erreur",
+    "success": "Succès",
+    "warning": "Avertissement"
+  },
+  "Registers": {
+    "title": "Registres"
+  },
+  "SettingsDialog": {
+    "title": "Paramètres",
+    "kernel": "Noyau",
+    "language": "Langue",
+    "theme": "Thème"
+  },
+  "Status": {
+    "title": "Statut"
+  },
+  "Tabs": {
+    "editor": "Éditeur",
+    "execution": "Exécution",
+    "instructionSet": "Jeu d'instructions",
+    "hcl": "HCL"
+  }
+}

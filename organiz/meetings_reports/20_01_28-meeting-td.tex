@@ -1,0 +1,111 @@
+\documentclass[french]{article}
+ 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=blue]{hyperref}
+
+\title{Compte rendu de TD - Environnement d'exécution y86+HCL}
+
+\author{
+    BANDET Alexis \\
+    \texttt{alexis.bandet@u-bordeaux.fr} \\
+    GAISSET Valentin \\
+    \texttt{valentin.gaisset@etu.u-bordeaux.fr} \\
+    GUISSET Romain \\
+    \texttt{romain.guisset@etu.u-bordeaux.fr} \\
+    SIMBA Florian \\
+    \texttt{florian.simba@u-bordeaux.fr} \\
+}
+
+\date{28 Janvier 2020}
+
+\begin{document}
+
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+\section{Introduction}
+
+Deuxième séance de TD. Première revue du cahier des besoins.\\
+Il en est ressorti que certains points du document étaient satisfaisants, mais il y a énormément de précisions à apporter (détaillées plus bas). Certains besoins, pourtant essentiels, n'apparaissaient pas.
+
+Le cahier des besoins devrait être conçu de telle manière qu'une équipe de développeurs quelconque pourrait comprendre l'essence du projet et ainsi le réaliser.
+
+Dans l'idéal il faut détailler comme si le projet partait de zéro, sans projet pré-existant.
+
+\section{Éléments à corriger}
+
+\begin{enumerate}
+    \item Numéroter les besoins :\\
+    Ils doivent être numérotés afin de pouvoir les identifier et les référencer plus facilement par la suite. La numérotation n'indique pas la priorité. Le besoin 3 peut être plus prioritaire que le besoin 1. Cela permet de ranger les besoins par catégorie.\\
+    La liste des priorités se fera en suivant. %TODO à compléter
+    \\
+    \item Illustrer les besoins :\\
+    Toutes les descriptions sont actuellement textuelles et ne permettent pas de bien se représenter le résultat souhaité. Il faudrait ajouter des illustrations (schémas, captures d'écran, montage, ...) afin de donner un aperçu du besoin. Cela vaut globalement pour tout ce qui touche à l'interface, du simple bouton à l'éditeur de code.\\
+    La visualisation du .yo a été donnée à titre d'exemple.
+    \\
+    \item Bien détailler les besoins :\\
+    Chaque besoin, même si déjà implémenté, doit être détaillé et illustré comme si ça n'était pas le cas. Une équipe ne connaissant pas le sujet devrait pouvoir réaliser le projet à partir de ce cahier, et en partant de rien. Durant la réunion, l'exemple de l'analyse statique de code a été donné. Il faut illustrer et dire les comportements attendus.
+    \\
+    \item Problème de présentation :\\
+    Le texte dans la partie \textbf{3.3 - Architecture} traite de l'ajout d'une instruction dans l'application web existante. Cette partie devrait être déplacée dans \textbf{2 - État de l'art}.\\
+    De plus, cette partie \textbf{3.3} n'a peut être pas vraiment sa place dans ce document, car les spécifications de l'application à développer se feront dans un autre document.
+    \\
+    \item La modularité :\\
+    Grand absent de la liste des besoins, il faut vraiment le mettre en avant et le \textbf{détailler}. Pour le fond, il faut, pour chaque besoin nécessitant d'être modulaire, préciser en quoi consiste concrètement la modularité.\\
+    Pour la forme, deux approches ont été proposées :
+    \begin{enumerate}
+        \item Pour chaque besoin, créer un sous-besoin de modularité et décrire en quoi consistera la modularité.
+        \item Faire un besoin non fonctionnel de modularité, et faire référence à chaque besoin en décrivant en quoi elle consiste. 
+        \\
+    \end{enumerate}
+    
+    \item Plus de précision sur les interactions utilisateur :\\
+    Cela revient à illustrer les besoins, comme préciser plus haut. Des diagrammes de séquence pourraient être pertinents pour visualiser des exemples d'utilisation.
+    \\
+    \item Remarque sur le PC :\\
+    Quelques registres, notamment le PC, manquaient à l'appel.  Il est vraiment important et doit impérativement être présent dans l'interface, quitte à être en double, dans la vue des registres (comme c'est actuellement le cas) et dans le statut du processeur.
+    \\
+    \item Mise en contexte :\\
+    Il pourrait être intéressant de rajouter en introduction un lexique / paragraphe pour expliquer quelques éléments de base du y86 afin que tout le monde soit capable de lire le document. Il faudrait, par exemple, expliquer ce qu'est un fichier .ys, .yo, .hcl, quelles sont les grandes étapes pour passer d'un .ys à un .yo etc... Il s'agit d'une mise en contexte. Ajouter un exemple de code y86 permettrait à tout lecteur de visualiser à quoi ressemble ce langage. Il serait par ailleurs pertinent d'inclure des images illustrant les fonctionnalités de l'éditeur de code source. Par exemple la coloration syntaxique ainsi que la mise en évidence d'erreurs dans le code qui n'est actuellement qu'une simple croix rouge dans la marge de l'éditeur.
+    \\
+    \item gestion du HCl :\\
+    Même si la question du HCL est floue pour le moment, il faut décrire les besoins le concernant en partant du principe qu'il sera implémenté un jour. Il s'agit notamment de penser à l'aspect modulaire afin que l'application soit capable d'évoluer dans le futur.
+    \\
+    \item Accessibilité :\\
+    Malgré le manque d'informations actuel, il faut parler de cette notion dans les besoins non-fonctionnel, notamment des recherches à effectuer sur ce thème.
+    \\
+    \item Codage des instructions :\\
+    Il faut traiter la question du codage des instructions. idéalement, deux fichier seraient à modifier. L'un pour décrire l'instruction (icode, ifun, args, taille, etc) et l'autre (hcl) pour décrire le câblage.\\
+    Travailler la façon de représenter le codage d'une instruction a aussi été mentionné. la façon actuelle de le faire n'est pas très simple à appréhender et peut perdre certains étudiants.
+    \\
+    \item Boutons load / save :\\
+    Un bouton \textbf{save} devrait être rajouté afin de pouvoir sauvegarder la configuration courante du simulateur (instruction set + hcl) ou le code y86 saisi.\\
+    Le bouton \textbf{load}, quant à lui, devrait permettre de charger du code y86, un fichier HCL ou bien un set d'instructions.
+    \\
+    \item Besoin supplémentaire :\\
+    La notion de visibilité des accès mémoire a été abordée. Lors de l'exécution d'un .yo, les accès mémoire sont représentés en bleu, mais il faut se déplacer manuellement dans la liste des valeurs, ce qui n'aide pas à voir qui est modifié et quand. Pour répondre à ce problème, l'idée de "sauter" à l'adresse accédée a été proposée afin d'aider les étudiants à mieux visualiser l'impact de leur programme sur la mémoire.
+    \\
+    \item Séparation des tâches et des besoins :\\
+    Lors de la première entrevue, nous avions convenu que les phases de recherche sur l'existant seraient marquées en tant que besoins. Finalement, ce ne sera pas le cas, et ces recherches prendront la forme de tâches.
+    \\
+    \item Numéroter les boutons :\\
+    Une longue documentation se répétant trop est difficile à lire, il faudra donc présenter une légende des boutons en numérotant chacun d'entre eux pour s'y retrouver plus facilement.
+    \\
+    \item Mise en page des captures d'écran :\\
+    Étant donné que nous utilisons le \LaTeX pour la mise en page de la documentation ainsi que les divers rapports. Nous pourrons nous permettre d'utiliser l'environnement \textit{landscape} pour mettre les pages de nos documents contenant une image de grande taille (une capture d'écran de l'interface par exemple) en format paysage.
+    \\
+    \item Documentation en Anglais :\\
+    Il nous a été rappelé que la documentation de notre application devra être écrite en Anglais, c'est un besoin exprimé par l'UE de PdP ainsi que par nos clients.
+\end{enumerate}
+
+\section{Conclusion}
+
+Commencer à préciser les besoins à amener à se poser beaucoup de questions, notamment en ce qui concerne le HCL. De ce fait, un rendez-vous avec les clients devra être pris rapidement.
+
+
+\end{document}

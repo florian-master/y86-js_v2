@@ -1,0 +1,226 @@
+[
+  {
+    "name": "nop",
+    "icode": 1,
+    "ifun": 0,
+    "typeArg1": -1,
+    "typeArg2": -1
+  },
+  {
+    "name": "halt",
+    "icode": 0,
+    "ifun": 0,
+    "typeArg1": -1,
+    "typeArg2": -1
+  },
+  {
+    "name": "rrmovl",
+    "icode": 2,
+    "ifun": 0,
+    "typeArg1": 0,
+    "typeArg2": 0
+  },
+  {
+    "name": "irmovl",
+    "icode": 3,
+    "ifun": 0,
+    "typeArg1": 2,
+    "typeArg2": 0
+  },
+  {
+    "name": "rmmovl",
+    "icode": 4,
+    "ifun": 0,
+    "typeArg1": 0,
+    "typeArg2": 1
+  },
+  {
+    "name": "mrmovl",
+    "icode": 5,
+    "ifun": 0,
+    "typeArg1": 1,
+    "typeArg2": 0
+  },
+  {
+    "name": "addl",
+    "icode": 6,
+    "ifun": 0,
+    "typeArg1": 0,
+    "typeArg2": 0
+  },
+  {
+    "name": "subl",
+    "icode": 6,
+    "ifun": 1,
+    "typeArg1": 0,
+    "typeArg2": 0
+  },
+  {
+    "name": "andl",
+    "icode": 6,
+    "ifun": 2,
+    "typeArg1": 0,
+    "typeArg2": 0
+  },
+  {
+    "name": "xorl",
+    "icode": 6,
+    "ifun": 3,
+    "typeArg1": 0,
+    "typeArg2": 0
+  },
+  {
+    "name": "sall",
+    "icode": 6,
+    "ifun": 4,
+    "typeArg1": 0,
+    "typeArg2": 0
+  },
+  {
+    "name": "sarl",
+    "icode": 6,
+    "ifun": 5,
+    "typeArg1": 0,
+    "typeArg2": 0
+  },
+  {
+    "name": "jmp",
+    "icode": 7,
+    "ifun": 0,
+    "typeArg1": 3,
+    "typeArg2": -1
+  },
+  {
+    "name": "jle",
+    "icode": 7,
+    "ifun": 1,
+    "typeArg1": 2,
+    "typeArg2": -1
+  },
+  {
+    "name": "jl",
+    "icode": 7,
+    "ifun": 2,
+    "typeArg1": 2,
+    "typeArg2": -1
+  },
+  {
+    "name": "je",
+    "icode": 7,
+    "ifun": 3,
+    "typeArg1": 2,
+    "typeArg2": -1
+  },
+  {
+    "name": "jne",
+    "icode": 7,
+    "ifun": 4,
+    "typeArg1": 2,
+    "typeArg2": -1
+  },
+  {
+    "name": "jge",
+    "icode": 7,
+    "ifun": 5,
+    "typeArg1": 2,
+    "typeArg2": -1
+  },
+  {
+    "name": "jg",
+    "icode": 7,
+    "ifun": 6,
+    "typeArg1": 2,
+    "typeArg2": -1
+  },
+  {
+    "name": "call",
+    "icode": 8,
+    "ifun": 0,
+    "typeArg1": 2,
+    "typeArg2": -1
+  },
+  {
+    "name": "ret",
+    "icode": 9,
+    "ifun": 0,
+    "typeArg1": -1,
+    "typeArg2": -1
+  },
+  {
+    "name": "pushl",
+    "icode": 10,
+    "ifun": 0,
+    "typeArg1": 0,
+    "typeArg2": -1
+  },
+  {
+    "name": "popl",
+    "icode": 11,
+    "ifun": 0,
+    "typeArg1": 0,
+    "typeArg2": -1
+  },
+  {
+    "name": "iaddl",
+    "icode": 12,
+    "ifun": 0,
+    "typeArg1": 2,
+    "typeArg2": 0
+  },
+  {
+    "name": "isubl",
+    "icode": 12,
+    "ifun": 1,
+    "typeArg1": 2,
+    "typeArg2": 0
+  },
+  {
+    "name": "iandl",
+    "icode": 12,
+    "ifun": 2,
+    "typeArg1": 2,
+    "typeArg2": 0
+  },
+  {
+    "name": "ixorl",
+    "icode": 12,
+    "ifun": 3,
+    "typeArg1": 2,
+    "typeArg2": 0
+  },
+  {
+    "name": "isall",
+    "icode": 12,
+    "ifun": 4,
+    "typeArg1": 2,
+    "typeArg2": 0
+  },
+  {
+    "name": "isarl",
+    "icode": 12,
+    "ifun": 5,
+    "typeArg1": 2,
+    "typeArg2": 0
+  },
+  {
+    "name": "leave",
+    "icode": 13,
+    "ifun": 0,
+    "typeArg1": -1,
+    "typeArg2": -1
+  },
+  {
+    "name": "jreg",
+    "icode": 14,
+    "ifun": 0,
+    "typeArg1": 0,
+    "typeArg2": -1
+  },
+  {
+    "name": "jmem",
+    "icode": 15,
+    "ifun": 0,
+    "typeArg1": 1,
+    "typeArg2": -1
+  }
+]
